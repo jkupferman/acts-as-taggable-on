@@ -22,6 +22,9 @@ module ActsAsTaggableOn
   mattr_accessor :remove_unused_tags
   self.remove_unused_tags = false
 
+  mattr_accessor :clear_owned_tags_on_new_owned_tag_creation
+  self.clear_owned_tags_on_new_owned_tag_creation = true
+
   def self.glue
     delimiter = @@delimiter.kind_of?(Array) ? @@delimiter[0] : @@delimiter
     delimiter.ends_with?(" ") ? delimiter : "#{delimiter} "
